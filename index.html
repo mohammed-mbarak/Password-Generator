@@ -3,18 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Random Password Generator</title>
+  <title>PasswordForge – Random Password Generator</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Generate a <br><span>Random Password</span></h1>
-    <div class="display">
-      <input type="text" id="password" placeholder="Password">
-      <img src="https://cdn-icons-png.flaticon.com/128/1622/1622069.png" onclick="copyPassword()">
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <h2 class="logo">PasswordForge</h2>
+
+      <!-- Mobile Menu Button -->
+      <div class="menu-btn" id="menu-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <!-- Navigation Links -->
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Generator</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
     </div>
-    <button onclick="createPassword()"><img src="https://img.icons8.com/?size=50&id=107272&format=png"/> Password</button>
-  </div>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main class="container">
+    <h1 class="title">
+      Generate a <br>
+      <span>Secure Password</span>
+    </h1>
+
+    <div class="display">
+      <input type="text" id="password" placeholder="Click Generate" readonly>
+      <img src="https://cdn-icons-png.flaticon.com/128/1622/1622069.png" alt="Copy" onclick="copyPassword()">
+    </div>
+
+    <button class="generate-btn" onclick="createPassword()">
+      <img src="https://img.icons8.com/?size=50&id=107272&format=png" alt="Generate Icon"/>
+      Generate Password
+    </button>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2025 PasswordForge — Built with 💻 & JavaScript</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
-<script src="script.js"></script>
 </html>

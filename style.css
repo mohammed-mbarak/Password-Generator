@@ -1,70 +1,207 @@
-*{
+* {
   margin: 0;
   padding: 0;
-  font-family: 'Poppins',sans-serif;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
 }
 
-body{
-  background: #002339;
+/* ===== PAGE BACKGROUND ===== */
+body {
+  background: #0f172a;  /* Modern deep navy */
   color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-.container{
-  margin: 12%;
-  width: 90%;
-  max-width: 700px;
-}
-
-.display{
+/* ===== NAVBAR ===== */
+.navbar {
   width: 100%;
-  margin-top: 50px;
+  background: #1e293b;
+  padding: 15px 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 600;
+  color: #00e676;
+}
+
+/* Desktop Nav */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: #e2e8f0;
+  text-decoration: none;
+  font-size: 16px;
+  transition: 0.2s;
+}
+
+.nav-links a:hover {
+  color: #00e676;
+}
+
+/* ===== MOBILE MENU BUTTON ===== */
+.menu-btn {
+  width: 30px;
+  height: 22px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.menu-btn span {
+  height: 3px;
+  width: 100%;
+  background: #e2e8f0;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+/* ===== MOBILE BREAKPOINT ===== */
+@media (max-width: 768px) {
+
+  .menu-btn {
+    display: flex;
+  }
+
+  /* Hide desktop nav */
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #1e293b;
+    width: 220px;
+    flex-direction: column;
+    padding: 20px;
+    gap: 18px;
+    border-radius: 8px 0 0 8px;
+    display: none;
+    box-shadow: -2px 5px 12px rgba(0,0,0,0.3);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  /* Menu button animation */
+  .menu-btn.open span:nth-child(1) {
+    transform: rotate(45deg) translateY(8px);
+  }
+  .menu-btn.open span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-btn.open span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-8px);
+  }
+}
+
+/* ===== MAIN CONTAINER ===== */
+.container {
+  width: 90%;
+  max-width: 550px;
+  margin: auto;
+  text-align: center;
+  padding: 60px 0;
+  flex: 1;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: 500;
   margin-bottom: 30px;
+}
+
+.title span {
+  color: #00e676;
+  border-bottom: 4px solid #00e676;
+}
+
+/* ===== DISPLAY BOX ===== */
+.display {
   background: #fff;
   color: #333;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 26px 20px;
-  border-radius: 5px;
+  padding: 18px 20px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.15);
 }
 
-.container h1{
-  font-weight: 500 ;
-  font-size: 45px;
-}
-
-.container h1 span{
-  color: #019f55;
-  border-bottom: 4px solid #019f55;
-  padding-bottom: 7px;
-}
-
-.display img{
-  width: 30px;
-  cursor: pointer;
-}
-
-.display input{
-  border: 0;
-  outline: o;
-  font-size: 24px;
-}
-
-.container button img{
-  width: 28px;
-  margin-right: 10px;
-}
-
-.container button{
-  border: 0;
-  outline: 0;
-  background: #019f55;
+.display input {
+  border: none;
+  outline: none;
   font-size: 22px;
-  font-weight: 300;
+  width: 100%;
+}
+
+.display img {
+  width: 28px;
+  cursor: pointer;
+  margin-left: 12px;
+  opacity: 0.75;
+  transition: 0.2s;
+}
+
+.display img:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* ===== BUTTON ===== */
+.generate-btn {
+  border: none;
+  outline: none;
+  background: #00e676;
+  font-size: 20px;
+  font-weight: 500;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 16px 26px;
-  border-radius: 5px;
+  gap: 12px;
+  padding: 14px 26px;
+  border-radius: 8px;
   cursor: pointer;
+  color: #003016;
+  transition: 0.25s ease-in-out;
+  width: 100%;
+}
+
+.generate-btn:hover {
+  background: #00c96a;
+  transform: translateY(-2px);
+}
+
+.generate-btn img {
+  width: 26px;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  width: 100%;
+  background: #1e293b;
+  padding: 18px 0;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 14px;
 }
