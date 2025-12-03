@@ -57,6 +57,3 @@ Mohammed Hassan (mohammed-mbarak)
 Full-Stack | Security-Focused | Always Learning
 
 
-The app ensures password strength by mixing all character types.
-
-With one click, users can copy the password to their clipboard.
